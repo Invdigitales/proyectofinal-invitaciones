@@ -1,27 +1,22 @@
 
-
-
-const btn = document.getElementById('button');
-
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'enviando...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_xe09e8g';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Enviar mensaje';
-      alert('Mensaje enviado correctamente');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
+ let url = 'https://jsonplaceholder.typicode.com/users' //origen de los datos
     
+ fetch(url) //solicitud a la url
+ .then(response => response.json()) //se obtiene la respuesta 
+ .then(data => mostrarData(data)) //leemos la data (objeto)
+ .catch(error => console.log(error)) //se identiifca un error
+
+
+ const mostrarData = (data) =>{
+   console.log (data)
+   let body = ""
+         for (var i = 0; i < data.length; i++) {      
+            body+=`<tr><td>${data[i].venis}</td><td>${data[i].nombre}</td><td>${data[i].email}</td></tr>`
+         }
+         document.getElementById('data').innerHTML = body
+         //console.log(body)
+     }
+
 
 
 

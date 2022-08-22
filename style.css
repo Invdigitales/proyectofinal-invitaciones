@@ -208,3 +208,7 @@ input[type="button"] {
   box-shadow: 1px 1px 30px -5px rgb(255, 255, 255);
   cursor: pointer;
 }
+.table{
+  background-color: #f1bdcd;
+}
+
