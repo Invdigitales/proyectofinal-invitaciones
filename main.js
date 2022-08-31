@@ -74,17 +74,18 @@ console.log(getRemainTime('Oct 09 2022 18:43:30 GMT-0300'));
 
 
 
-const boton2 = document.querySelector("#sumbit");
+const boton2 = document.querySelector("#boton2");
 const contenedor = document.querySelector("#fetch");
-console.log(boton2)
+console.log("buton",boton2)
 
-const obtenerDatos = ()=> {
+const obtenerDatos = (e)=> {
+  e.preventDefault()
   fetch("./datos.json")
   .then(response => console.log(response))
 }
 
 
 
-boton2.onclick = ()=> {
-  obtenerDatos();
+boton2.onclick = (e)=> {
+  obtenerDatos(e);
 }
