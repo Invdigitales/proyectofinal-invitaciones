@@ -14,11 +14,17 @@
 <body>
 
 
-  <h1 class="titulo_inicio">TE INVITO A QUE ME ACOMPAÑES EN ESTE GRAN DÍA<b>♡</b></h1>
+  <h1 class="titulo_inicio">HOLA SOY FLOR Y TE INVITO A QUE ME ACOMPAÑES EN ESTE GRAN DÍA<b>♡</b></h1>
   <p class="profile-details">
   <div class="container">
     <img src="./imagenes/atikh-bana-_KaMTEmJnxY-unsplash.jpg" alt="">
   </div>
+
+  
+  <h1><span class="cuenta" id="clock"></span></h1>
+
+
+  
 
 <div class="container" style="margin-top: 40px">
 <a href="#" id="txtBtn" class="button">cargar TXT</a>
@@ -26,14 +32,38 @@
 
 
 
-</div class="container">
 <div id="resultado"></div>
+</div>
+<div class="container">
+  <div class="roow">
+    
+    <form id="form">
+      <h1>Formulario para confirmar tu asistencia</h1>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="Nombre" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Apellido</label>
+        <input type="text" class="form-control" placeholder="Apellido" name="last" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">¿Asistiras a la fiesta? Responde por si o por no</label>
+        <input type="text" class="form-control" placeholder="Respuesta" name="message" required>
+      </div>
+      <input type="submit" class="btn btn-success" id="button" value="Enviar mensaje">
+    </form>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript"> emailjs.init('LkX6i5rosGRTy8OL9')</script>
+  </div>
 </div>
 
 
 
 
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./main.js"></script>
 </body>
 
