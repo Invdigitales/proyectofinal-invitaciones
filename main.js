@@ -1,21 +1,34 @@
-
- let url = 'https://jsonplaceholder.typicode.com/users' //origen de los datos
-    
- fetch(url) //solicitud a la url
- .then(response => response.json()) //se obtiene la respuesta 
- .then(data => mostrarData(data)) //leemos la data (objeto)
- .catch(error => console.log(error)) //se identiifca un error
+let form = document.querySelector("#form")
+let nombre = document.querySelector("#nombre")
+let apellido = document.querySelector("#apellido")
+let viene = document.querySelector("#viene")
+let boton = document.querySelector("#btn")
 
 
- const mostrarData = (data) =>{
-   console.log (data)
-   let body = ""
-         for (var i = 0; i < data.length; i++) {      
-            body+=`<tr><td>${data[i].venis}</td><td>${data[i].nombre}</td><td>${data[i].email}</td></tr>`
-         }
-         document.getElementById('data').innerHTML = body
-         //console.log(body)
-     }
+boton.addEventListener("click", () => {
+
+  Swal.fire({
+    title: '<strong>VER LA UBICACION <u></u></strong>',
+    icon: 'info',
+    html:
+      'INGRESA, ' +
+      '<a href=https://www.google.com.ar/maps/@-33.1477351,-62.8617599,15z</a> ' +
+      'and other HTML tags',
+    showCloseButton: true,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up"></i> Great!',
+    confirmButtonAriaLabel: 'Thumbs up, great!',
+    cancelButtonText:
+      '<i class="fa fa-thumbs-down"></i>',
+    cancelButtonAriaLabel: 'Thumbs down'
+  })
+});
+
+
+
+
 
 
 
@@ -61,4 +74,17 @@ console.log(getRemainTime('Oct 09 2022 18:43:30 GMT-0300'));
 
 
 
+const boton2 = document.querySelector("#sumbit");
+const contenedor = document.querySelector("#fetch");
+console.log(boton2)
 
+const obtenerDatos = ()=> {
+  fetch("./datos.json")
+  .then(response => console.log(response))
+}
+
+
+
+boton2.onclick = ()=> {
+  obtenerDatos();
+}
