@@ -85,3 +85,24 @@ console.log(getRemainTime('Oct 09 2022 18:43:30 GMT-0300'));
 
 
 
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_xe09e8g';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar mensaje';
+      alert('Mensaje enviado correctamente');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
